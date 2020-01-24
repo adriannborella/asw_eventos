@@ -44,6 +44,8 @@ asw_eventos Module Project.
 
     'depends': [
         'base',
+        'web_tour',
+        'web_selenium_modulo'
     ],
     'external_dependencies': {
         'python': [
@@ -53,6 +55,7 @@ asw_eventos Module Project.
         'security/ir.model.access.csv',
         'view/eventos_view.xml',
         'view/menu.xml',
+        'view/recursos.xml',
     ],
     'demo': [
         'demo.xml'

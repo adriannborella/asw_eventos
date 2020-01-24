@@ -13,8 +13,16 @@ class asw_eventos(models.Model):
     
     state = fields.Selection(
         string='Estado',
-        selection=[('b', 'Borrador'), ('c', 'Confirmado')]
+        selection=[('b', 'Borrador'), ('c', 'Confirmado')],
+        default='b'
     )
+
+    
+
+    @api.multi
+    def aprobar(self):
+        import pdb; pdb.set_trace()
+        self.state = 'c'
 
     @api.model
     def create(self, vals):
