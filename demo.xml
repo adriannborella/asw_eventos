@@ -1,0 +1,7 @@
+<odoo>
+    <data>        
+        <record id="asw_evento_unico" model="asw.eventos">
+            <field name="fecha">2020-01-01</field>
+        </record>        
+    </data>
+</odoo>

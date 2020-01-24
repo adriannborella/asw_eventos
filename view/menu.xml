@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <data noupdate="0">            
+        <!-- Elemento Root -->
+        <menuitem name="Eventos" id="asw_eventos"/>        
+
+        <!-- Elemento Grupe -->
+        <menuitem name="Datos" id="asw_grupo_datos" parent="asw_eventos"/>
+
+        
+        <record id="menu_asw_eventos_list_action" model="ir.ui.menu" >
+            <field name="name">Eventos</field>
+            <field name="sequence" eval="10" />
+            <field name="action" ref="asw_eventos_list_action" />
+            <field name="parent_id" ref="asw_eventos" />
+        </record>
+        
+    </data>
+</odoo>

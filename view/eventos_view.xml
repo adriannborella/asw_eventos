@@ -1,0 +1,55 @@
+<odoo>
+    <data>
+        <record model="ir.actions.act_window" id="asw_eventos_list_action">
+            <field name="name">Eventos</field>
+            <field name="res_model">asw.eventos</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+            <field name="help" type="html">
+                <p class="oe_view_nocontent_create">Cree el primer Eventos</p>
+            </field>
+        </record>
+
+        <record id="view_tree_eventos_ui" model="ir.ui.view">
+            <field name="name">Eventos</field>
+            <field name="model">asw.eventos</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="motivo" />
+                    <field name="fecha" />
+                    <field name="state" />
+                </tree>
+            </field>
+        </record>
+
+        <record id="view_form_eventos_ui" model="ir.ui.view">
+            <field name="name">Eventos</field>
+            <field name="model">asw.eventos</field>
+            <field name="arch" type="xml">
+                <form>
+                    <header>
+                        <field name="state" widget="statusbar"/>
+                    </header>
+                    <sheet>
+                        <group>
+                            <field name="motivo" />
+                            <field name="fecha" />
+                            <field name="active" />
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <record id="view_search_eventos" model="ir.ui.view">
+            <field name="name">Eventos</field>
+            <field name="model">asw.eventos</field>
+            <field name="arch" type="xml">
+                <search>
+                    <field name="motivo" />
+                    <field name="fecha" />
+                </search>
+            </field>
+        </record>
+    </data>
+</odoo>
