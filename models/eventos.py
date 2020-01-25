@@ -16,13 +16,26 @@ class asw_eventos(models.Model):
         selection=[('b', 'Borrador'), ('c', 'Confirmado')],
         default='b'
     )
-
     
+    event_id = fields.Many2one(
+        string='Evento',
+        comodel_name='calendar.event',
+        ondelete='restrict',
+    )    
 
     @api.multi
     def aprobar(self):
-        import pdb; pdb.set_trace()
-        self.state = 'c'
+        nevento = self.env['calendar.event'].create({
+            'name' : self.motivo,
+            'start' : self.fecha,
+            'stop' : self.fecha,
+            'allday': True
+        })
+
+        self.write({
+            'state' : 'c',
+            'event_id': nevento.id
+        }) 
 
     @api.model
     def create(self, vals):

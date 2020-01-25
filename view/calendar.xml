@@ -1,0 +1,14 @@
+<odoo>
+    <data>
+        <record model="ir.actions.act_window" id="asw_eventos_calendario_list_action">
+            <field name="name">Eventos</field>
+            <field name="res_model">calendar.event</field>
+            <field name="view_type">form</field>
+            <field name="domain">[('eventos_ids','!=', False)]</field>
+            <field name="view_mode">calendar,tree,form</field>
+            <field name="help" type="html">
+                <p class="oe_view_nocontent_create">Cree el primer calendario</p>
+            </field>
+        </record>        
+    </data>
+</odoo>
